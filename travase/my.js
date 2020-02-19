@@ -51,6 +51,7 @@ $(function(){
         });
     });    
 
+    
     // リロード
     $("#reload").click(function(){
         location.reload();
