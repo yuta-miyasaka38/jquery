@@ -10,17 +10,28 @@
 </head>
 <body>
     <dir>
-        <p>要素を取得して、書き換える</p>
-        <div>
-            <textarea id="box" cols="30" rows="10">default</textarea>
-        </div>
-        <div>
-            <button id="btn">取得</button>
+        <h1>jQueryによる要素の取得と書き換え</h1>
+        <div id="box">
+            <textarea id="textbox" cols="30" rows="10" placeholder="文字を入力してください">default</textarea>
+            <div>ボタンを押すと<strong id="jq" style="color:red; background:yellow">jquery</strong>を実行</div>
         </div>
         <br>
-
         <div>
-            出力：<span id="output">ここの文字が置き換わる</span>
+            <button id="btn1">①.text()</button><span style="font-size:0.8em"> :id=textboxのtext要素を取得し出力</span><br>
+            <button id="btn2">②.html()-text-</button><span style="font-size:0.8em"> :id=boxのhtml要素を取得しtextで出力</span><br>
+            <button id="btn3">③.html()-html-</button><span style="font-size:0.8em"> :id=boxのhtml要素を取得しhtmlで出力</span><br>
+            <button id="btn4">④.attr()-id取得-</button><span style="font-size:0.8em"> :textareaタグのidを取得し出力</span><br>
+            <button id="btn5">⑤.attr()-id書き換え-</button><span style="font-size:0.8em"> :textareaタグのid＝noneに。id=boxの中のdivタグのid=textboxに変更し、text要素を出力</span><br>
+            <button id="btn6">⑥.attr()-rows書き換え-</button><span style="font-size:0.8em"> :textareaタグのrows属性を10 → 1, cols:30 → 100に変更</span><br>
+            <button id="btn7">⑦.removeAttr()</button><span style="font-size:0.8em"> :textareaタグのrows, cols, placeholder属性を削除</span><br>
+            <button id="btn8">⑧.css() -取得-</button><span style="font-size:0.8em"> :インラインstyleを取得</span><br>
+            <button id="btn9">➈.css() -書き換え-</button><span style="font-size:0.8em"> :インラインstyleを変更</span><br>
+            <button id="btn10">➉.location.reload() </button><span style="font-size:0.8em">：デフォルトに戻す</span><br>
+        </div>
+        <br>
+        <hr>    
+        <div>
+            【出力】<span id="output">変更内容が表示されます</span>
         </div>
     </dir>
 </body>
