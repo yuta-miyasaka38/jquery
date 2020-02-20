@@ -1,7 +1,8 @@
 $(function(){
     $('#create').click(function(){
         var a1 =$('<a>').text('aタグを生成');
-        console.log("a1[0]:",a1[0]);
+        $("#output").append(a1);
+        console.log("a1[0]:",a1);
         
         var a2 =$('<a href="https://jquery.com/">').text('jqueryトップへのリンク');
         console.log("a2[0]:",a2[0]);
