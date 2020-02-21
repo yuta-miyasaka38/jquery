@@ -1,0 +1,20 @@
+.bgcolor {
+    background: black;
+    color: white;
+}
+
+h1 {
+    color: gray;
+}
+
+.small {
+    font-size: 0.1em;
+}
+
+.large {
+    font-size: 1.6em;
+}
+
+.display {
+    display: none;
+}
