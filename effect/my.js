@@ -112,4 +112,16 @@ $(function(){
     $("#toggle5000B").click(function(){
         $("#output2").toggle(5000);
     });
+
+    //function 処理完了したらテキストを表示
+    $('#function').click(function(){
+        $('#output').toggle('normal', function(){
+            $('#done').text('functionにより「処理が完了しました」のテキストを表示しています').css('color','red');
+        });
+    });
+
+    //reload
+    $('#reload').click(function(){
+        location.reload();
+    });    
 });
