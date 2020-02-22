@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="my.js"></script>
+
+    <title>Return</title>
+</head>
+<body>
+    <h1>return~戻り値~</h1>
+    <div id="box">
+        <div style="font-weight: bold;">～HELLOプログラム～</div>
+            <span>name:</span><input id="inputName" type="text" placeholder="名前を入力してください"><br>
+            <button id="hello">hellow実行</button><br><hr>
+            <div id="output1">&lt;出力&gt;</div><br>
+        <div><br>
+            <div style="font-weight: bold;">～掛け算プログラム～</div>
+            <input id="inputA" type="text" placeholder="数値1">
+            <input id="inputB" type="text"placeholder="数値2"><br>
+            <button id="multi">掛け算</button><br><hr>
+            <div id="output2">&lt;出力&gt;</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr style="border: dashed; border-color: gray;">
+        <h3>HELLOプログラムのコード</h3>
+        <pre style="border: 0.1em solid; border-color: blue;">
+    function hello(name){
+        return 'こんにちは' + name + 'さん';
+    }
+
+    $('#hello').click(function(){
+        var inputName = $('#inputName').val();
+        $('&lt;div&gt;').text(hello(inputName)).appendTo("#output1");   
+    });
+        </pre>
+
+        <br>
+        <h3>掛け算プログラムのコード</h3>
+        <pre style="border: 0.1em solid; border-color: rgb(0, 195, 255);">
+    function add(A,B){
+        return A*B;
+    }
+
+    $('#multi').click(function(){
+        var inputA = $('#inputA').val();
+        var inputB = $('#inputB').val();
+        $('&lt;div&gt;').text(add(inputA,inputB)).appendTo("#output2");   
+    });
+        </pre>
+    </div>
+    
+</body>
+</html>
