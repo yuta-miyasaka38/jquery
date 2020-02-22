@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax, setTimeoutによる実行順序</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="my.js"></script>
+
+</head>
+<body>
+    <h1>ajax, setTimeoutによる実行順序</h1>
+    <button id="ajax">ajax</button><br>
+    <button id="setTimeout">setTimeout</button><br>
+    <p style="color:gray; font-size: 0.8em;">*後の処理も実行される（deferredで遅延が必要）</p>
+    <div id="code1">
+        <pre style="border: 0.2em solid; border-color: rgb(245, 168, 2);">
+    $("#ajax").click(function(){
+        alert("①開始");
+        $.ajax({url:"./get1.txt", success: function(data){
+            $("&lt;div&gt;").text(data).appendTo("#output1");
+        }});
+        alert('③終了');
+    });
+        </pre>
+        <p>↓↓↓ここにajax②の処理を出力</p>
+        <div id="output1"></div>
+    </div>
+    <hr>
+
+
+    <div id="setTimeoutOutput">
+        <pre style="border: 0.2em solid; border-color: rgb(0, 172, 224);">
+    $("#setTimeout").click(function(){
+    alert("①開始");
+    setTimeout(function(){
+        $("&lt;div&gt;").text("2秒経過").appendTo("#output2");
+    });
+    alert('③終了');
+    });
+        </pre>
+        <p>↓↓↓ここにsetTimeout②の処理を出力</p>
+        <div id="output2"></div>
+    </div>
+</body>
+</html>
