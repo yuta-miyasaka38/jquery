@@ -1,0 +1,17 @@
+http://127.0.0.1/default.html
+
+※開きたいファイルのパスを入力
+http://127.0.0.1/ajax/index.html
+　└ ajaxフォルダ内の、index.htmlファイル
+
+
+■スタート(terminal)
+start nginx
+
+
+■終了(terminal)
+nginx.exe -s quit
+
+
+■バージョン
+nginx-1.17.8

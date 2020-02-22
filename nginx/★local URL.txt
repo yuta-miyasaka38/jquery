@@ -1,0 +1,8 @@
+http://127.0.0.1/index.html
+
+■スタート(terminal)
+start nginx
+
+
+■終了(terminal)
+nginx.exe -s quit
