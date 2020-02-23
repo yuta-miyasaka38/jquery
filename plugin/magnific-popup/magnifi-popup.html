@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dialog-with-css-animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <title>jQuery official plugin</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="my.js"></script>
+
+</head>
+<body>
+    <h1>jQuerry officail siteのplugin</h1>
+    <h2>Popup-gallery</h2>
+    <div class="popup-gallery">
+        <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner">
+            <img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75">
+        </a>
+        <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
+        <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
+        <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
+        <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
+        <a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
+        <a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/KMKC428B289_TP_V.jpg" title="冬の赤岳">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/KMKC428B290.jpg?d=500" alt="冬の赤岳" width="75" height="75">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/bocchiinaka011_TP_V4.jpg" title="田んぼの景色を眺めるカップル">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/bocchiinaka011.jpg?d=500" alt="田んぼの景色を眺めるカップル" width="75" height="75">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/kumakichi2020A1927_TP_V.jpg" title="安曇野の桜">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/kumakichi2020A1927.jpg?d=500" alt="安曇野の桜" width="75" height="75">
+        </a>
+    </div>
+    <br>
+    <br>
+    <hr>
+
+    <!-- ZOOM GALLARY -->
+    <h2>zoom-gallery</h2>
+    <div class="zoom-gallery">
+        <!--
+        Width/height ratio of thumbnail and the main image must match to avoid glitches.
+        If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable
+         -->
+        <a href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg" data-source="http://500px.com/photo/32736307" title="Into The Blue" style="width:193px;height:125px;">
+            <img src="http://farm4.staticflickr.com/3763/9204547649_7de96ee188_t.jpg" width="140" height="100">
+        </a>
+        <a href="http://farm3.staticflickr.com/2856/9207329420_7f2a668b06_o.jpg" data-source="http://500px.com/photo/32554131" title="Light Sabre" style="width:82px;height:125px;">
+            <img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="100">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/kum07012055_TP_V.jpg"  title="春の八ヶ岳" style="width: 193; height: 125px;">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/kum07012055.jpg?d=500" width="140px" height="100">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/KM19730025_TP_V.jpg"  title="ダム" style="width:82px;height:125px;">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/KM19730025.jpg?d=500" width="140px" height="100">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/PAKU2028texture1994_TP_V.jpg" title="clouds小サイズ" style="width:82px;height:125px;">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/PAKU2028texture1994.jpg?d=500" width="140px" height="100">
+        </a>
+        <a href="https://www.pakutaso.com/shared/img/thumb/JKekihome_TP_V4.jpg"  title="AAA" style="width:82px;height:125px;">
+            <img src="https://pakutaso.cdn.rabify.me/shared/img/thumb/JKekihome.jpg?d=500" width="140px" height="100">
+        </a>
+    </div>
+
+    <!-- youtube, Googlemap -->
+        <!-- クリックジャッキングに引っかかり表示されない（chromeの仕様変わった？） 
+        Refused to display xxxxx in a frame because it set 'X-Frame-Options' to 'deny'. -->
+    <h2>youtube, Google Map</h2>
+    <div>
+        <a class="popup-youtube" href="https://www.youtube.com/watch?v=int19KnLdTE">Open YouTube video</a><br>
+        <a class="popup-gmaps" href="https://www.google.co.jp/maps/search/%E5%85%AB%E3%83%B6%E5%B2%B3/@35.6352,139.6635937,14z?hl=ja" target="_blank">Open Google Map</a>
+    </div>
+    <br>
+    <br>
+
+    <!-- Dialog with css animation -->
+    <h2>Dialog with css animation</h2>
+    <a class="popup-with-zoom-anim" href="#small-dialog">Open with fade-zoom animation</a><br>
+    <a class="popup-with-move-anim" href="#small-dialog">Open with fade-slide animation</a>
+
+        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+	        <h1>Dialog example</h1>
+	        <p>ダイアログ表示用This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
+        </div>
+    <br>
+    <br>
+
+    <!-- MODAL POPUP -->
+    <!-- link that opens popup -->
+    <h2>MODAL POPUP</h2>
+    <a class="popup-with-form" href="#test-form">Open form</a>
+
+    <!-- form itself -->
+    <form id="test-form" class="mfp-hide white-popup-block">
+        <h1>Form</h1>
+        <fieldset style="border:0;">
+            <p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
+            <ol>
+                <li>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Name" required="">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="example@domain.com" required="">
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="">
+                </li>
+                <li>
+                    <label for="textarea">Textarea</label><br>
+                    <textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+
+</body>
+</html>
