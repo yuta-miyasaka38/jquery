@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Sliders</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+
+</head>
+<body>
+    <h1>Sliders ~jQuery Plugin~</h1>
+
+    <!-- template
+        <div class="function">
+            <h2>タイトル</h2>
+            <div class="uiBox">
+
+            </div>
+        </div>
+     -->
+
+    <div class="function">
+        <h2>Default Slider</h2>
+        <div class="uiBox">
+            <div id="slider"></div>
+        </div>
+    </div>
+
+    <div class="function">
+        <h2>color picker</h2>
+        <div class="uiBox">
+            <!-- <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+                <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+                Simple Colorpicker
+            </p> -->
+               
+              <div id="red"></div>
+              <div id="green"></div>
+              <div id="blue"></div>
+               
+              <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+               
+        </div>
+    </div>
+
+    <div class="function">
+        <h2>Multipul Slider</h2>
+        <div class="uiBox2">
+            <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+                <span class="ui-icon ui-icon-volume-on" style="float:left; margin:-2px 5px 0 0;"></span>
+                Master volume
+            </p>
+               
+              <div id="master" style="max-width:120%; margin:15px;"></div>
+               
+            <p class="ui-state-default ui-corner-all" style="padding:3px;margin-top:4em;">
+                <span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+                Graphic EQ
+            </p>
+               
+              <div id="eq">
+                <span>88</span>
+                <span>77</span>
+                <span>55</span>
+                <span>33</span>
+                <span>40</span>
+                <span>45</span>
+                <span>70</span>
+              </div>
+        </div>
+    </div>
+
+    <div class="function">
+        <h2>Range Slider</h2>
+        <div class="uiBox">
+            <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+              </p>
+               
+              <div id="slider-range"></div>
+        </div>
+    </div>  
+    
+    <div class="function">
+        <h2>Snap to increase</h2>
+        <div class="uiBox">
+            <p>
+                <label for="amount">Donation amount (500円ずつ増加):</label>
+                <input type="text" id="amount2" readonly style="border:0; color:#ff0000; font-weight:bold;">
+              </p>
+               
+            <div id="slider2"></div>
+
+        </div>
+    </div>
+
+    <div class="function">
+        <h2>vertical slider</h2>
+        <div class="uiBox">
+            <p>
+                <label for="amount">Price range:</label>
+                <input type="text" id="amount3" readonly style="border:0; color:#5ca707; font-weight:bold;">
+              </p>
+               
+              <div id="slider-range3" style="height:250px;"></div>
+        </div>
+    </div>
+
+</body>
+</html>

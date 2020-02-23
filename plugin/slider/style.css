@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    max-width: 100%;
+}
+
+h2 {
+    color: gray;
+}
+
+.function {
+    margin-top: 50px;
+}
+
+.uiBox {
+    max-width: 50%;
+    border: 0.2em solid;
+    border-color: bisque;
+    padding: 50px;
+    margin: auto;
+}
+
+.uiBox2 {
+    max-width: 50%;
+    height: 400px;
+    border: 0.2em solid;
+    border-color: bisque;
+    padding: 50px;
+    margin: auto;
+}
+
+
+/* color picker */
+#red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 30%;
+    margin: 15px;
+  }
+  #swatch {
+    max-width: 20%;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: auto;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+
+/* multipul sliders */
+#eq > span {
+    max-height:110px; 
+    float:left; 
+    margin:12px
+  }
