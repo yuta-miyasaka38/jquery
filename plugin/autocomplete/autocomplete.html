@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Accordion</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+
+</head>
+<body>
+    <h1>Autocomplete ~jQuery Plugin~</h1>
+
+    <!-- 一般的なautocomplete -->
+    <div class="ui-widget box">
+        <h2>(1)プログラミング言語検索</h2>
+        <label for="tags">検索: </label>
+        <input id="tags" placeholder="アルファベットを入力">
+        <p class="explanation">*jsファイルの変数availableTags内容が候補KWとなる。部分一致で表示</p>
+    </div>
+
+    <!-- グループ分けのautocomplete -->
+    <div class="box">
+        <h2>(2)グループKW検索</h2>
+        <label for="search">Search: </label>
+        <input id="search" placeholder="a-zかカタカナを入力">
+    </div>
+
+    <!-- 図と説明文も表示 -->
+    <div class="box">
+        <h2>(3)図と説明文を表示</h2>
+        <div id="project-label">国のアルファベットを入力してください</div>
+        <img id="project-icon" src="flags/japan.gif" class="ui-state-default" alt="">
+        <input id="project" placeholder="japan">
+        <input type="hidden" id="project-id">
+        <p id="project-description"　placeholder="アルファベットを入力"></p>
+    </div>   
+    
+    <!-- スクロール -->
+    <div class="box">
+        <h2>(4)スクロール表示</h2>
+        <div class="ui-widget">
+            <label for="tags2">Tags: </label>
+            <input id="tags2" placeholder="a">
+        </div>
+        <p>*(1)＋CSSで高さ制限</p>
+        <pre class="exampleCode">
+
+    .ui-autocomplete {
+        max-height: 100px;　/* 表示枠の高さ */
+        overflow-y: auto;　/* スクロールバー設置 */
+        overflow-x: hidden; /* 横のスクロールバーは表示させない */
+    } 
+        </pre>
+    </div>
+    <span class="explanation">*class「ui-autocomplete」に適用。全適になる</span><br>
+    <span class="explanation">*preタグ内のスクロール表示「横幅指定　+　overflow: auto;」</span>
+
+    <!-- 複数選択 -->
+    <div class="box">
+        <h2>(5)複数表示</h2>
+        <div class="ui-widget">
+            <label for="tags">Tag programming languages: </label>
+            <input id="tags3" size="50">
+          </div>
+          <p class="explanation">*JSでKWを追加できるように加工</p>
+          <pre>
+
+function split( val ) {
+    return val.split( /,\s*/ );　//スラッシュを空白「\s」に変換。「/」はオブジェクトにしている（デリミタ）？
+    }
+    function extractLast( term ) {
+    return split( term ).pop();
+    }
+
+    $( "#tags3" )
+    // don't navigate away from the field on tab when selecting an item
+    .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+        event.preventDefault();
+        }
+    })
+    .autocomplete({
+        minLength: 0,
+        source: function( request, response ) {
+        // delegate back to autocomplete, but extract the last term
+        response( $.ui.autocomplete.filter(
+            availableTags, extractLast( request.term ) ) );
+        },
+        focus: function() {
+        // prevent value inserted on focus
+        return false;
+        },
+        select: function( event, ui ) {
+        var terms = split( this.value );
+        // remove the current input
+        terms.pop();
+        // add the selected item
+        terms.push( ui.item.value );
+        // add placeholder to get the comma-and-space at the end
+        terms.push( "" );
+        this.value = terms.join( ", " );
+        return false;
+        }
+    });
+
+          </pre>
+    </div>
+
+
+</body>
+</html>
