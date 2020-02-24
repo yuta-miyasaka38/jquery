@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Sortable</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Sortable ~jQuery Plugin~</h1>
+
+<!-- templete -->
+<!-- 
+    <div class="box">
+        <h2>(X)AAA</h2>
+    </div>
+
+     <pre class="exampleCode">
+     </pre>
+ -->
+
+    <!-- Default -->
+    <div class="box">
+        <h2>(1)Defualt</h2>
+        <ul class="sortable">
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+          </ul>
+          <pre class="exampleCode">
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+          </pre>
+    </div>
+
+    <div class="box">
+        <h2>(2)Connect lists</h2>
+        <ul id="sortable1" class="connectedSortable">
+            <li class="ui-state-default">Item 1</li>
+            <li class="ui-state-default">Item 2</li>
+            <li class="ui-state-default">Item 3</li>
+            <li class="ui-state-default">Item 4</li>
+            <li class="ui-state-default">Item 5</li>
+          </ul>
+           
+          <ul id="sortable2" class="connectedSortable">
+            <li class="ui-state-highlight">Item 1</li>
+            <li class="ui-state-highlight">Item 2</li>
+            <li class="ui-state-highlight">Item 3</li>
+            <li class="ui-state-highlight">Item 4</li>
+            <li class="ui-state-highlight">Item 5</li>
+          </ul>
+          <pre class="exampleCode">
+            $( "#sortable1, #sortable2" ).sortable({
+                connectWith: ".connectedSortable"
+              }).disableSelection();
+          </pre>
+    </div>
+
+    <div class="box">
+        <h2>(3)Dispaly as grid</h2>
+        <ul class="sortable grid">
+            <li class="ui-state-default">1</li>
+            <li class="ui-state-default">2</li>
+            <li class="ui-state-default">3</li>
+            <li class="ui-state-default">4</li>
+            <li class="ui-state-default">5</li>
+            <li class="ui-state-default">6</li>
+            <li class="ui-state-default">7</li>
+            <li class="ui-state-default">8</li>
+            <li class="ui-state-default">9</li>
+            <li class="ui-state-default">10</li>
+            <li class="ui-state-default">11</li>
+            <li class="ui-state-default">12</li>
+          </ul>
+          <pre class="exampleCode">
+    ※グリッド内でのみ操作はcssで設定
+    .grid { 
+        list-style-type: none;
+        margin: 0; 
+        padding: 0; 
+        width: 450px; /* gridの横幅 */
+    }
+    
+    .grid li { 
+        margin: 3px 3px 3px 0; 
+        padding: 1px; 
+        float: left; 
+        width: 100px; /* 縦横100×90pxのボックス */
+        height: 90px; 
+        font-size: 4em; 
+        text-align: center; /* ボックスの中の数字中央寄せ */
+    }
+
+    /* 3の倍数番目だけ背景色を変える */
+    .grid li:nth-child(3n) {
+        background: lightpink;
+    }
+          </pre>
+    </div>
+
+    <div class="box">
+        <h2>(4)Drop placeholder</h2>
+        <ul class="sortable placeholder">
+            <li class="ui-state-default">Item 1</li>
+            <li class="ui-state-default">Item 2</li>
+            <li class="ui-state-default">Item 3</li>
+            <li class="ui-state-default">Item 4</li>
+            <li class="ui-state-default">Item 5</li>
+            <li class="ui-state-default">Item 6</li>
+            <li class="ui-state-default">Item 7</li>
+          </ul>
+          <pre class="exampleCode">
+    $( ".placeholder" ).sortable({
+        placeholder: "ui-state-highlight"
+        });
+    $( ".placeholder" ).disableSelection();
+          </pre>
+    </div>
+
+    <div class="box">
+        <h2>(5)exclude item (割り込み不可)</h2>
+        <ul id="sortable3">
+            <li class="ui-state-default">Item 1</li>
+            <li class="ui-state-default">Item 2</li>
+            <li class="ui-state-default ui-state-disabled">(ソート不可。割り込みも不可)</li>
+            <li class="ui-state-default ui-state-disabled">(ソート不可。割り込みも不可)</li>
+            <li class="ui-state-default">Item 5</li>
+            <li class="ui-state-default">Item 6</li>
+            <li class="ui-state-default">Item 7</li>
+        </ul>
+        <pre class="exampleCode">
+    $( "#sortable3" ).sortable({
+        items: "li:not(.ui-state-disabled)"
+    });
+    $( "#sortable3 li").disableSelection();
+        </pre>
+    </div>
+
+    <div class="box">
+        <h2>(6)exclude item(割り込みか可)</h2>
+    </div>
+      <ul id="sortable4">
+        <li class="ui-state-default">Item 1</li>
+        <li class="ui-state-default ui-state-disabled">(I'm not sortable)</li>
+        <li class="ui-state-default ui-state-disabled">(I'm not sortable)</li>
+        <li class="ui-state-default">Item 4</li>
+      </ul>
+
+     <pre class="exampleCode">
+    $( "#sortable4" ).sortable({
+        cancel: ".ui-state-disabled"
+    });
+
+    $( "#sortable4 li" ).disableSelection();
+     </pre>
+
+
+
+
+</body>
+</html>

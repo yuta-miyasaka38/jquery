@@ -1,0 +1,104 @@
+h2{
+    margin-top: 40px;
+}
+
+.box {
+    margin-bottom:40px;
+}
+
+.exampleCode{
+    border: 0.1em solid;
+    border-color: goldenrod;
+    overflow: auto;
+    max-width: 70%;
+    padding: 20px 0 0;
+    clear:both;
+}
+
+
+/* default */
+.sortable,#sortable3, #sortable4 { 
+    list-style-type: none; 
+    margin: 0; padding: 0; width: 60%; 
+}
+.sortable li { 
+    margin: 0 3px 3px 3px;
+    padding: 0.4em; 
+    padding-left: 1.5em; 
+    font-size: 1.2em; 
+    height: 18px;
+}
+
+
+/* connect list */
+#sortable1, #sortable2 {
+    border: 1px solid #eee;
+    width: 142px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+  }
+
+    /* 偶数番目のliだけ色を変える */
+    #sortable1 li:nth-child(even){  /* (1)even:偶数、(2)odd:奇数 (3)数字を入れれば指定した番号のli */
+       color: red;
+      }
+
+    /* 最初のliだけ背景色を変える */
+    #sortable1 li:first-child {
+        background: lightgreen;
+    }
+
+    /* 最後のliだけ背景色を変える */
+     #sortable1 li:last-child {
+        background: lightgreen;
+    }   
+
+    /* 2の倍数だけ背景色を変える */
+    #sortable2 li:nth-child(2n) {
+        background: lightpink;
+    }
+
+/* grid */
+.grid { 
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    width: 450px; /* gridの横幅 */
+}
+
+.grid li { 
+    margin: 3px 3px 3px 0; 
+    padding: 1px; 
+    float: left; 
+    width: 100px; /* 縦横100×90pxのボックス */
+    height: 90px; 
+    font-size: 4em; 
+    text-align: center;  /* ボックスの中の数字中央寄せ */
+}
+
+    /* 3の倍数番目だけ背景色を変える */
+    .grid li:nth-child(3n) {
+        background: lightpink;
+    }
+
+/* 一部ソート不可 exclude item */
+$( "#sortable1" ).sortable({
+    items: "li:not(.ui-state-disabled)"
+  });
+
+  $( "#sortable2" ).sortable({
+    cancel: ".ui-state-disabled"
+  });
+
+  $( "#sortable1 li, #sortable2 li" ).disableSelection();
+
