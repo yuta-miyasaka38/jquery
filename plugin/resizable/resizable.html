@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Accordion</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Autocomplete ~jQuery Plugin~</h1>
+
+        <!-- templete -->
+        <!-- 
+        <div class="box">
+            <h2>(X)AAA</h2>
+        </div>
+
+        <pre class="exampleCode">
+        </pre>
+        -->
+
+        <div class="box">
+            <h2>(1)Default</h2>
+            <div class="resizable ui-widget-content">
+                <h3 class="header ui-widget-header">Resizable</h3>
+                <div class="innerText" style="background: rgb(214, 218, 26); text-align: center; margin: 20px;" >AAA</div>
+            </div>
+        </div>
+        <pre class="exampleCode">
+    ※divタグ(id="resizable")
+    ※.resizable() ・・・拡大縮小
+    ※デフォルト、最大サイズ、最小サイズの設定
+    【JS】
+    $( "#resizable" ).resizable();
+
+    【CSS】
+    #resizable {
+        height: 120px; width: 200px;
+        max-width: 90%; max-height: 500px;
+        min-width: 80px; min-height: 80px;
+    }
+        </pre>
+
+        <div class="box">
+            <h2>(2)画像resizable</h2>
+            <h3>画像を直接resizeableにした場合</h3>
+            <img id="resizableImg" src="images/moutain-top.jpg" alt="local pic" width="150px" height="100px" title="右下でresizeできます">
+
+            <h3>divタグの中にいれた場合</h3>
+            <div class="resizable">
+                <img src="images/gardem-girl.jpg" alt="local pic" title="右下でresizeできます" style="max-width: 100%; max-height: 100%;">
+            </div>
+        </div>
+        <pre class="exampleCode">
+    ・画像に直で設定するとアイコンが見えない → paddingの設定で解決
+    ・親要素に設定する場合は画像に max-height, max-width　を設定する
+    　　- 設定しないとオリジナルサイズではみ出す
+        </pre>
+
+        <!-- アニメーション -->
+        <div class="box">
+            <h2>(3)Animation</h2>
+            <div class="resizableA ui-widget-content">
+                <h3 class="header  ui-widget-header">Animate</h3>
+              </div>
+            <img class="resizableA" src="images/top-of-winter-mountain.jpg" alt="local pic" width="150px" height="100px" title="右下でresizeできます">
+        </div>
+
+        <pre class="exampleCode">
+    ※resizableの引数に、「animate: true」を設定
+    $( ".resizableA" ).resizable({
+        animate: true
+    });
+
+
+    ※cssでhelperを設定（グレーのドット枠線）
+      -helperがないとわかりにくい 
+    .ui-resizable-helper { border: 1px dotted gray; }
+        </pre>
+
+        <!-- コンテナ -->
+        <div class="box">
+            <h2>(4)Constrain Container(決められた枠内でのみ操作可能)</h2>
+            <div class="container ui-widget-content">
+                <h3 class="header ui-widget-header">コンテナ</h3>
+                <div class="resizableC bgcolor" >
+                    <h3 class="ui-widget-header">Resizable要素</h3>
+                </div>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+    ※resizableの引数に、「containtment: ".container"」を設定
+    ※".container"は親要素
+
+    $( ".resizableC" ).resizable({
+        containtment: ".container"
+    });
+
+
+    ------css--------
+    ※div(class="container")の大きさはcssで指定
+    .container {
+        width: 70%;
+        height: 300px;
+    }    
+        </pre>
+
+
+    <!-- Animation & Container -->
+        <div class="box">
+            <h2>(5)Animate & Container</h2>
+            <div class="container2 ui-widget-content">
+                <h3 class="header ui-widget-header">コンテナ</h3>
+                <div class="resizableAC bgcolor" >
+                    <h3 class="ui-widget-header">Resizable要素</h3>
+                </div>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+    ※resizableの引数に、「animate」と「container」を設定
+    ※containerとすると、上の枠を引き継いでしまい高さ変更ができない → container2で別に定義
+    $( ".resizableAC").resizable({
+        animate: true,
+        containment: ".container2",
+      });
+
+        </pre>
+
+        <!-- Reserve Aspect Ratio -->
+        <div class="box">
+            <h2>(6)Reserve Aspect Ratio</h2>
+            <div class="resizableAspect ui-widget-content">
+                <h3 class="header ui-widget-header">Preserve aspect ratio</h3>
+            </div>
+            <img class="resizableAspect" src="images/nature-autum-river.jpg" alt="local pic" width="150px" height="100px" title="右下でresizeできます">
+        </div>
+
+        <pre class="exampleCode">
+    ※resizableの引数で、aspect比を指定
+    $( ".resizableAspect" ).resizable({
+        aspectRatio: 16 / 9
+      });
+        </pre>
+
+
+    
+    <!-- gridに合わせて拡大（自由選択ではない） -->
+        <div class="box">
+            <h2>(7)Snap to grid(gridに合わせて拡大)</h2>
+            <div class="resizableG ui-widget-content">
+                <h3 class="header ui-widget-header">Grid</h3>
+            </div>
+            <img class="resizableGAspect" src="images/nature-autum-river.jpg" alt="local pic" width="150px" height="100px" title="右下でresizeできます">
+        </div>
+
+        <pre class="exampleCode">
+    ※resizableの引数で、gridと幅を指定
+    $( ".resizableG" ).resizable({
+        grid: 50
+    });
+        </pre>
+
+
+</body>
+</html>

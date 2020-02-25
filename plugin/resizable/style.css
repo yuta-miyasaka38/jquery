@@ -1,0 +1,70 @@
+/* ↓↓↓共通↓↓↓ */
+.box {
+    margin-top:60px;
+}
+
+.explanation {
+    font-size: 0.8em;
+    color:gray
+}
+
+pre {
+    border: 0.1em solid;
+    border-color: goldenrod;
+    max-width: 90%;
+    overflow: auto; /* スクロールバーを表示 */
+}
+
+.exampleCode{
+    border: 0.1em solid;
+    border-color: goldenrod;
+    overflow: auto;
+    max-width: 90%;
+    padding: 20px 0 0;
+    clear:both;
+}
+/* ↑↑↑共通↑↑↑ */
+
+
+/* .resizable, .resizableA { width: 150px; height: 150px; padding: 0.5em; } */
+
+/* div内のh3テキスト上配置、テキスト中央寄せ */
+.header { text-align: center; margin: 0; }
+
+/*　resizable boxのサイズ */
+.resizable, .resizableA, .resizableAspect, .resizableG{
+    height: 120px;
+    width: 200px;
+    max-width: 90%;
+    max-height: 500px;
+    min-width: 80px;
+    min-height: 80px;
+}
+
+#resizableImg {
+    padding: 10px;
+}
+
+/* helperのスタイル */
+.ui-resizable-helper { border: 1px dotted gray; }
+
+
+/* container内のdivタグstyle */
+.bgcolor {
+    background: rgb(191, 245, 103);
+    height: 120px;
+    width: 200px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+/* containerのサイズ（この範囲内でのみresizable） */
+.container, .container2 {
+    width: 70%;
+    height: 300px;
+}
+
+img {
+    margin-top:10px;
+    padding:10px;
+}
