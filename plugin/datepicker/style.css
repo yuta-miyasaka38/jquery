@@ -1,0 +1,28 @@
+/* ↓↓↓共通↓↓↓ */
+.box {
+    margin-top:60px;
+}
+
+.explanation {
+    font-size: 0.8em;
+    color:gray
+}
+
+pre {
+    border: 0.1em solid;
+    border-color: goldenrod;
+    max-width: 90%;
+    overflow: auto; /* スクロールバーを表示 */
+}
+
+.exampleCode{
+    border: 0.1em solid;
+    border-color: goldenrod;
+    overflow: auto;
+    max-width: 90%;
+    padding: 20px 0 0;
+    clear:both;
+}
+/* ↑↑↑共通↑↑↑ */
+
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery DatePicker</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>DatePicker ~jQuery Plugin~</h1>
+
+    <a href="https://entereal.co.jp/blog/view/990402" target="_blank">参考サイト</a><br>
+    <a href="https://api.jqueryui.com/datepicker/" target="_blank">jQuery公式 Datepicker widget</a>
+
+        <!-- templete -->
+        <!-- 
+        <div class="box">
+            <h2>(X)AAA</h2>
+        </div>
+
+        <pre class="exampleCode">
+        </pre>
+        -->
+
+        <div class="box">
+            <h2>(1)Default</h2>
+            <h3>出力値 mm/dd/yy</h3>
+            <p>Date: <input type="text" class="datepicker"></p>
+        </div>
+
+        <pre class="exampleCode">
+    ①inputタグ、id/classを設定（class="datepicker"）
+    ②「.datepicker()」を使う
+    ※cssの設定なし
+    ※defaultは「月/日/年」
+
+    $( function() {
+        $( ".datepicker" ).datepicker();
+    } );
+        </pre>
+
+
+    <!-- 入力値日付の表示を変える -->
+        <div class="box">
+            <h2>(2)Format変更</h2>
+            <h3>①出力値 yyyy/mm/dd(曜日)</h3>
+            <p>Date: <input type="text" class="datepicker2"></p>
+        </div>
+
+        <pre class="exampleCode">
+    ※引数で「dataFormat」を設定
+    ※yy = 2020 (4桁)
+    ※DD = 曜日（English）
+    $( ".datepicker2" ).datepicker({
+        dateFormat: 'yy/mm/dd (DD)'
+    });
+        </pre>
+
+    <!-- カレンダーのフォーマット設定 -->
+        <div class="box">
+            <h3>
+                ②カレンダー見出し 〇年〇月<br>
+               　 曜日を漢字＋任意にカスタマイズ
+            </h3>
+            <p>Date: <input type="text" class="datepicker3"></p>
+        </div>
+
+        <pre class="exampleCode">
+    ※「yeatSuffix」: カレンダー上部 西暦4桁の後ろに表示する文字
+    ※「showMonthAfterYear」:カレンダー上部 並びを年→月にする
+    ※「monthNames」: カレンダー上部 月の表示を指定（任意の文字列）
+    ※「dayNameMin」: カレンダー中部 曜日の表示を指定（任意の文字列）
+
+    $( ".datepicker3" ).datepicker({
+        yearSuffix: "年",
+        showMonthAfterYear: true,
+        monthNames:['1月', '2月', '3月', 'AAA', '5月', 'BBB', '7月', '8月', '9月', '10月', '11月', '12月'],
+        dayNamesMin:['日', 'CCC', '火', '水', 'DDD', '金', '土']
+    });
+        </pre>    
+    
+    <!-- 入力値を日本語にする -->
+        <div class="box">
+            <h3>
+                ③出力値 yyyy年m月d日(曜日)
+            </h3>
+            <p>Date: <input type="text" class="datepicker4"></p>
+        </div>
+
+        <pre class="exampleCode">
+    ※「dateFormat」で表示を'yy年m月d日 (DD)にする
+    ※「dayNames」で DDの英語標記を、指定した文字列に変更する
+
+    $( ".datepicker4" ).datepicker({
+        dateFormat: 'yy年m月d日 (DD)',
+        dayNames: ['日', '月', '火', '水', '木', '金', '土'],
+    });
+        </pre>  
+    
+    <!-- 選択日の指定（今日起点） -->
+        <div class="box">
+            <h3>
+                ④カレンダーの表示を30日後に設定
+            </h3>
+            <p>Date: <input type="text" class="datepicker5"></p>
+        </div>
+
+        <pre class="exampleCode">
+    ※「defaultDate：±数値」で設定
+    ※ハイライトは今日から動かせない
+    $( ".datepicker5" ).datepicker({
+        defaultDate: +30
+    });
+        </pre>  
+
+
+    <!-- 日本仕様 -->
+    <div class="box">
+        <h3>
+            ⑤日本仕様(カレンダー1年後表示)
+        </h3>
+        <p>Date: <input type="text" class="datepicker6"></p>
+    </div>
+
+    <pre class="exampleCode">
+    // カレンダーの設定
+    yearSuffix: "年",
+    showMonthAfterYear: true,
+    monthNames:['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+    dayNamesMin:['日', '月', '火', '水', '木', '金', '土'],
+    firstDay: 1,
+
+    // 出力の設定
+    dateFormat: 'yy年m月d日 (DD)',
+    dayNames: ['日', '月', '火', '水', '木', '金', '土'],
+
+    // 初期表示の設定
+    defaultDate: '+2y'　*数値 or クオテーション＆m or yで指定。
+    （'+1y' ＝ '+12m' ≒ +365） 
+    </pre>   
+    
+
+    <!-- 最大 選択可能日付の設定 -->
+    <div class="box">
+        <h3>
+            ⑥最大 選択可能日付の設定、アイコンなし
+        </h3>
+        <p>Date: <input type="text" class="datepicker7"></p>
+    </div>  
+    
+    <pre class="exampleCode">
+    ※「maxDate」最大選択可能日付
+    ※「hideIfNoPrevNext:true」最大/最小日付以降の次へアイコン非表示
+    $( ".datepicker7" ).datepicker({
+        maxDate:'+5w',
+        hideIfNoPrevNext:true
+    });
+    </pre> 
+
+    <!-- 最小 選択可能日付の設定 -->
+    <div class="box">
+        <h3>
+            ⑦最小 選択可能日付の設定
+        </h3>
+        <p>Date: <input type="text" class="datepicker8"></p>
+    </div>  
+    
+    <pre class="exampleCode">
+    ※「minDate」最小選択可能日付
+    $( ".datepicker8" ).datepicker({
+        minDate:'+1w', 　//一週間後以降
+    });
+    </pre> 
+
+
+    <!-- 最大(今日)、最小(2ヶ月前) -->
+    <div class="box">
+        <h3>
+            ➈最大(今日)、最小(2ヶ月前)、アイコンなし
+        </h3>
+        <p>Date: <input type="text" class="datepicker9"></p>
+    </div>  
+    
+    <pre class="exampleCode">
+    ※「new Date()」今日(最新の日付)
+    $( ".datepicker9" ).datepicker({
+        maxDate:new Date(),
+        minDate: '-2m',
+        hideIfNoPrevNext:true
+    });
+    </pre>     
+
+
+    <!-- 土曜始まり -->
+    <div class="box">
+        <h3>
+            ➉土曜始まり
+        </h3>
+        <p>Date: <input type="text" class="datepicker10"></p>
+    </div>  
+    
+    <pre class="exampleCode">
+    ※「firstDay:0~6」
+    ※デフォルト０＝日曜日
+    ※７＝日曜日になる
+    ※1：月、2：火、3：水、4：木、5：金、6：土
+    $( ".datepicker10" ).datepicker({
+        firstDay: 6
+    });
+    </pre>    
+</body>
+</html>
