@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>icon jQuery UI</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <h1>icon ~jQuery UI Plugin~</h1>
+
+    <a href="https://api.jqueryui.com/theming/icons/" target="_blank">参考サイト</a><br>
+
+        <!-- templete -->
+        <!-- 
+        <div class="box">
+            <h2>(X)AAA</h2>
+        </div>
+
+        <pre class="exampleCode">
+        </pre>
+        -->
+
+        <!-- (0)ダイヤログ -->
+        <div class="box">
+            <h2>アイコンの記述方法</h2>
+            <h3>spanタグでhtml内に記述</h3>
+            <div class="exampleBox">
+              &lt;span class="ui-icon ui-icon-power"&gt;&lt;/span&gt;        
+           </div><br>
+            <P style="text-decoration: underline;"> 
+              【設定内容】.ui-icon-{種類}-{小種別}-{方向}
+            </P>
+            <ul>
+              <li>種類：icon type</li>
+              <li>小種別：icon sub description</li>
+              <li>方向：direction</li>
+            </ul>
+            <span>　　※spanタグの間にテキストを記述しても表示されない</span>
+            <span>　　※subやdirectionの設定がない場合は無視される</span>
+            <hr>
+            <br>
+
+            <h2>subやdirectionの設定例</h2>
+            <p>種別1</p>
+            <ul style="list-style: none;">
+              <li><span class="ui-icon ui-icon-arrow-1-n"></span>　ui-icon-arrow-1-n</li>
+              <li><span class="ui-icon ui-icon-arrow-1-ne"></span>　ui-icon-arrow-1-ne</li>
+              <li><span class="ui-icon ui-icon-arrow-1-e"></span>　ui-icon-arrow-1-e</li>
+              <li><span class="ui-icon ui-icon-arrow-1-s"></span>　ui-icon-arrow-1-s</li>
+              <li><span class="ui-icon ui-icon-arrow-1-w"></span>　ui-icon-arrow-1-w</li>
+              <li><span class="ui-icon ui-icon-arrow"></span>　ui-icon-arrow</li>
+              <li><span class="ui-icon "></span>　設定なし or 設定ミス</li>
+              <li><span class="ui-icon ui-icon-arrow-1-en"></span>　ui-icon-arrow-1-en</li>
+            </ul>
+
+            <p>種別2</p>
+            <ul style="list-style: none;">
+              <li><span class="ui-icon ui-icon-arrow-2-n"></span>　ui-icon-arrow-2-n</li>
+              <li><span class="ui-icon ui-icon-arrow-2-ne"></span>　ui-icon-arrow-2-ne</li>
+              <li><span class="ui-icon ui-icon-arrow-2-e"></span>　ui-icon-arrow-2-e</li>
+              <li><span class="ui-icon ui-icon-arrow-2-s"></span>　ui-icon-arrow-2-s</li>
+              <li><span class="ui-icon ui-icon-arrow-2-w"></span>　ui-icon-arrow-2-w</li>
+              <li><span class="ui-icon ui-icon-arrow-2-en"></span>　ui-icon-arrow-2-en</li>
+            </ul>
+            <br>
+
+            <h2>-２-があるアイコン</h2>
+            <p>種別2 (cteate, trianble, arrow, arrowthick)</p>
+            <ul style="list-style: none;">
+              <li><span class="ui-icon ui-icon-caret-2-n-s"></span>　ui-icon-caret-2-n-s</li>
+              <li><span class="ui-icon ui-icon-caret-2-e-w"></span>　ui-icon-caret-2-e-w</li>
+              <li><span class="ui-icon ui-icon-triangle-2-n-s"></span>　ui-icon-triangle-2-n-s</li>
+              <li><span class="ui-icon ui-icon-triangle-2-e-w"></span>　ui-icon-triangle-2-e-w</li>
+              <li><span class="ui-icon ui-icon-arrow-2-n-s"></span>　ui-icon-arrow-2-n-s</li>
+              <li><span class="ui-icon ui-icon-arrow-2-e-w"></span>　ui-icon-arrow-2-e-w</li>
+              <li><span class="ui-icon ui-icon-arrow-2-se-nw"></span>　ui-icon-arrow-2-se-nw</li>
+              <li><span class="ui-icon ui-icon-arrow-2-se-nw"></span>　ui-icon-arrow-2-se-nw</li>
+              <li><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>　ui-icon-arrowthick-2-n-s</li>
+              <li><span class="ui-icon ui-icon-arrowthick-2-ne-sw"></span>　ui-icon-arrowthick-2-ne-sw</li>
+              <li><span class="ui-icon ui-icon-arrowthick-2-e-w"></span> ui-icon-arrowthick-2-e-w</li>
+              <li><span class="ui-icon ui-icon-arrowthick-2-se-nw"></span>　ui-icon-arrowthick-2-se-nw</li>
+            </ul>
+            <div class="exampleBox">
+              ※【-2-の場合】 -2-{方角1}-{方角2}    (公式サイトに-2-nsとあるが間違い))    
+           </div><br>
+           <br>
+
+           <h2>-4-があるアイコン</h2>
+           <p>4方向</p>
+           <ul style="list-style: none;">
+             <li><span class="ui-icon ui-icon-arrow-4"></span>　ui-icon-arrow-4</li>
+             <li><span class="ui-icon ui-icon-arrow-4-diag"></span>　ui-icon-arrow-4-diag</li>
+           </ul>
+           <br>
+
+           <h2>その他のアイコン</h2>
+           <p>音楽関連</p>
+           <ul style="list-style: none;">
+             <li><span class="ui-icon  ui-icon-play"></span>　 ui-icon-play</li>
+             <li><span class="ui-icon ui-icon-pause"></span>　ui-icon-pause</li>
+             <li><span class="ui-icon ui-icon-seek-next"></span>　ui-icon-seek-next</li>
+             <li><span class="ui-icon ui-icon-seek-prev"></span>　ui-icon-seek-prev</li>
+             <li><span class="ui-icon  ui-icon-seek-end"></span>　 ui-icon-seek-end</li>
+             <li><span class="ui-icon ui-icon-seek-first"></span>　ui-icon-seek-first</li>
+             <li><span class="ui-icon ui-icon-stop"></span>　ui-icon-stop</li>
+             <li><span class="ui-icon ui-icon-eject"></span>　ui-icon-eject</li>
+             <li><span class="ui-icon ui-icon-volume-off"></span>　ui-icon-volume-off</li>
+             <li><span class="ui-icon ui-icon-volume-on"></span>　ui-icon-volume-on</li>
+           </ul>
+           <br>
+
+           <p>モバイル関連</p>
+           <ul style="list-style: none;">
+            <li><span class="ui-icon ui-icon-power"></span>　ui-icon-power</li>
+            <li><span class="ui-icon ui-icon-signal-diag"></span>　ui-icon-signal-diag</li>
+            <li><span class="ui-icon ui-icon-signal"></span>　ui-icon-signal</li>
+            <li><span class="ui-icon ui-icon-battery-0"></span>　ui-icon-battery-0</li>
+            <li><span class="ui-icon ui-icon-battery-1"></span>　ui-icon-battery-1</li>
+            <li><span class="ui-icon ui-icon-battery-2"></span>　ui-icon-battery-2</li>
+            <li><span class="ui-icon ui-icon-battery-3"></span>　ui-icon-battery-3</li>
+           </ul>
+           <br>
+
+           <p>PC操作アイコン</p>
+           <ul style="list-style: none;"> 
+            <li><span class="ui-icon ui-icon-copy"></span>　ui-icon-copy</li>
+            <li><span class="ui-icon ui-icon-contact"></span>　ui-icon-contact</li>
+            <li><span class="ui-icon ui-icon-image"></span>　ui-icon-image</li>
+            <li><span class="ui-icon ui-icon-video"></span>　ui-icon-video</li>
+            <li><span class="ui-icon ui-icon-script"></span>　ui-icon-script</li>
+            <li><span class="ui-icon ui-icon-cart"></span>　ui-icon-cart</li>
+           </ul>
+           <br>
+
+           <p>備考アイコン</p>
+           <ul style="list-style: none;"> 
+            <li><span class="ui-icon ui-icon-alert"></span>　ui-icon-alert</li>
+            <li><span class="ui-icon ui-icon-info"></span>　ui-icon-info</li>
+            <li><span class="ui-icon  ui-icon-notice"></span>　 ui-icon-notice</li>
+            <li><span class="ui-icon ui-icon-help"></span>　ui-icon-help</li>
+            <li><span class="ui-icon ui-icon-check"></span>　ui-icon-check</li>
+           </ul>
+           <br>
+
+           <p>ピンアイコン</p>
+           <ul style="list-style: none;"> 
+            <li><span class="ui-icon ui-icon-pin-w"></span>　ui-icon-pin-w</li>
+            <li><span class="ui-icon ui-icon-pin-s"></span>　ui-icon-pin-s</li>
+            <li><span class="ui-icon  ui-icon-bullet"></span>　ui-icon-bullet</li>
+            <li><span class="ui-icon ui-icon-radio-off"></span>　ui-icon-radio-off</li>
+            <li><span class="ui-icon ui-icon-radio-on"></span>　ui-icon-radio-on</li>
+            <li><span class="ui-icon ui-icon-calculator"></span>　ui-icon-calculator</li>
+          </ul>
+           <br>
+
+           <p>プラス・マイナス(20px)</p>
+           <ul class="bigLetter" style="list-style: none;"> 
+            <li><span class="ui-icon ui-icon-plus"></span>　ui-icon-plus</li>
+            <li><span class="ui-icon ui-icon-plusthick"></span>　ui-icon-plusthick</li>
+            <li><span class="ui-icon  ui-icon-minus"></span>　ui-icon-minus</li>
+            <li><span class="ui-icon ui-icon-minusthick"></span>　ui-icon-minusthick</li>
+            <li><span class="ui-icon ui-icon-close"></span>　ui-icon-close</li>
+            <li><span class="ui-icon ui-icon-closethick"></span>　ui-icon-closethick</li>
+           </ul>
+           <br>
+
+           <p>ズーム・検索(large)</p>
+           <ul class="large" style="list-style: none;"> 
+            <li><span class="ui-icon ui-icon-zoomin"></span>　ui-icon-zoomin</li>
+            <li><span class="ui-icon ui-icon-zoomout"></span>　ui-icon-zoomout</li>
+            <li><span class="ui-icon ui-icon-gear"></span>　ui-icon-gear</li>
+            <li><span class="ui-icon ui-icon-heart"></span>　ui-icon-heart</li>
+            <li><span class="ui-icon ui-icon-star"></span>　ui-icon-star</li>
+            <li><span class="ui-icon ui-icon-link"></span>　ui-icon-link</li>
+            <li><span class="ui-icon ui-icon-search"></span>　ui-icon-search</li>
+           </ul>
+           <br>
+          
+  </body>
+</html>
