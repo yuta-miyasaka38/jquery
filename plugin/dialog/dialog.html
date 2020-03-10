@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Dialog</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <script src="my.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Dialog ~jQuery Plugin~</h1>
+
+    <a href="https://jqueryui.com/dialog/#default" target="_blank">参考サイト</a><br>
+
+        <!-- templete -->
+        <!-- 
+        <div class="box">
+            <h2>(X)AAA</h2>
+        </div>
+
+        <pre class="exampleCode">
+        </pre>
+        -->
+
+        <!-- (0)ダイヤログ -->
+        <div class="box">
+            <h2>CSS設定</h2>
+            <h3>(0)ダイアログのCSS設定</h3>
+            <div class="dialog1" title="～(0)「.ui-dialog」で設定～">
+                <p>
+                   タイトル部のフォント、背景色変更<br>
+                   ダイアログの背景色変更<br>
+                   jQueryで共通
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※可変要素①ダイヤログタイトル、②ダイヤログで表示する内容
+        ※「.dialog()」
+        $( ".dialog1" ).dialog();
+        </pre>
+
+
+        <!-- ①ダイヤログデフォルト表示 -->
+        <div class="box">
+            <h2>(1)default</h2>
+            <h3>ダイアログの表示（ページロード時）</h3>
+            <div class="dialog1" title="～①デフォルト表示～">
+                <p>
+                    ページを開いたときに表示。広告やコーションを表示できます<br><br>
+                    -ダイアログの拡大・縮小<br>
+                    -閉じるが可能
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※可変要素①ダイヤログタイトル、②ダイヤログで表示する内容
+        ※「.dialog()」
+        $( ".dialog1" ).dialog();
+        </pre>
+
+
+        <!-- ②画像表示 -->
+        <div class="box">
+            <h2>(2)default＋画像</h2>
+            <h3>ダイアログに画像を表示（ページロード時）</h3>
+            <div class="dialog1" title="～②デフォルト画像表示～">
+                <p>画像も表示できます
+                <img class="ad1" src="images/moutain-top.jpg" alt="">
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※画像がはみ出さないようにする:cssで設定
+        .ad1{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        </pre>   
+
+
+        <!-- ③見出し色、サイズ調整（css） -->
+        <div class="box">
+            <h2>(3)見出し色、サイズ調整（css）</h2>
+            <h3>③見出し色、サイズ調整（css）</h3>
+            <div class="dialog2" title="～③見出し色、サイズ調整（css）～">
+                <p>
+                    ページを開いたときに表示。広告やコーションを表示できます<br><br>
+                    -ダイアログの拡大・縮小<br>
+                    -閉じるが可能
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※可変要素①ダイヤログタイトル、②ダイヤログで表示する内容
+        ※「.dialog()」
+        $( ".dialog1" ).dialog();
+        </pre>
+
+
+        <!-- ④アニメーション -->
+        <div class="box">
+            <h2>(4)アニメーション</h2>
+            <h3>④アニメーションで開く</h3>
+            <div class="dialog3" title="～④アニメーションで開く～">
+                <p>
+                    ページを開いたときに表示。広告やコーションを表示できます<br><br>
+                    -ダイアログの拡大・縮小<br>
+                    -閉じるが可能
+                </p>
+            </div>
+            <button id="opener">アニメーションで開く</button>
+        </div>
+
+        <pre class="exampleCode">
+        ※設定は2つ①ダイアログの設定、②ボタンのclickイベント
+        ※「autoOpen: false」：自動で開かないようにする
+        ※show:{effect:" ", duration:XXXXms}　開く時の設定 
+        ※hide:{effect:" ", duration:XXXXms}　閉じるときの設定
+        ※blind: ブラインド、eplode：四方に飛び散る
+        ※dialog("open")でダイアログを開く
+        $( ".dialog3" ).dialog({
+            autoOpen: false,
+            show: {
+              effect: "blind",
+              duration: 1000
+            },
+            hide: {
+              effect: "explode",
+              duration: 1000
+            }
+          });
+
+          $( "#opener" ).on( "click", function() {
+            $( ".dialog3" ).dialog( "open" );
+          });
+    
+        </pre>
+
+        <!-- ⑤アニメーションの種類(1000ms) -->
+        <div class="box">
+            <h2>(5)アニメーションの種類(1000ms)</h2>
+            <h3>⑤アニメーションの種類(1000ms)</h3>
+            <div class="dialog11" title="～⑤アニメーションの種類 show">
+                <p>
+                   showで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog12" title="～⑤アニメーションの種類 clip">
+                <p>
+                   clipで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog13" title="～⑤アニメーションの種類 bounce">
+                <p>
+                   bounceで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog14" title="～⑤アニメーションの種類 drop">
+                <p>
+                    dropで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog15" title="～⑤アニメーションの種類 fold">
+                <p>
+                   foldで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog16" title="～⑤アニメーションの種類 slide">
+                <p>
+                   slideで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog17" title="～⑤アニメーションの種類 explode">
+                <p>
+                   explodeで開く＆閉じる
+                </p>
+            </div>
+            <div class="dialog18" title="～⑤アニメーションの種類 blind">
+                <p>
+                   blindで開く＆閉じる
+                </p>
+            </div>
+                <!-- <button class="openerXXX">(1)showで開く＆閉じる※作動しないため非活性</button><br> -->
+                <button class="opener2">(1)clipで開く＆閉じる</button><br>
+                <button class="opener3">(2)bounceで開く＆閉じる</button><br>
+                <button class="opener4">(3)dropで開く＆閉じる</button><br>
+                <button class="opener5">(4)foldで開く＆閉じる</button><br>
+                <button class="opener6">(5)slideで開く＆閉じる</button><br>
+                <button class="opener7">(6)explodeで開く＆閉じる</button><br>
+                <button class="opener8">(7)blindで開く＆閉じる</button><br>    
+        </div>
+
+        <pre class="exampleCode">
+        show, clip,bounce, drop, fold, slide, explode, blind
+        </pre>  
+        
+        
+        <!-- ⑥コーション＆ボタン -->
+        <div class="box">
+            <h2>(6)コーションとボタン</h2>
+            <h3>⑥コーションとボタン</h3>
+            <p>ボタン機能の追加。モーダル表示にする(背景黒)。</p>
+            <div class="dialog4" title="～⑥コーションとボタン～">
+                <p>
+                    <span class="ui-icon ui-icon-alert"></span>
+                    この内容は完全に削除されます。<br>
+                    削除していいですか？
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※「modal: true」：背景色をグレーにする（ただのポップアップではなくする）
+        ※「buttons:"ボタン名":function(){処理};」
+        ※コーションアイコン　&lt;span class="ui-icon ui-icon-alert"&gt; &lt;/span&gt;
+        $( ".dialog4" ).dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,　//モーダル表時中の背景色の設定
+            buttons: {
+              "すべて削除": function() {
+                $( this ).dialog( "close" );
+              },
+              "キャンセル": function() {
+                $( this ).dialog( "close" );
+              }
+            }
+          }); 
+        </pre>
+
+
+        <!-- ⑦モーダル形式のメッセージ -->
+        <div class="box">
+            <h2>(7)モーダル形式のメッセージ</h2>
+            <h3>⑦モーダル形式のメッセージ</h3>
+            <p>ボタン1つ。cssの設定</p>
+            <div class="dialog5" title="～⑦モーダル形式のメッセージ～">
+                <p>
+                    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+                    ファイルは問題なくダウンロードされました。
+                </p>
+                <p>
+                   現在、 <b>36% </b> の容量を使用しています。
+                </p>
+            </div>
+        </div>
+
+        <pre class="exampleCode">
+        ※⑥のボタン1つバージョン。
+        ※リサイズも可能。画面サイズ指定なし。
+        ※cssでボタン表示：class="ui-icon-circle-check"
+        ※
+        $( ".dialog5" ).dialog({
+            modal: true,
+            buttons: {
+              OK: function() {
+                $( this ).dialog( "close" );
+              }
+            }
+          });
+
+        ■CSS設定用class
+        <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+                    ファイルは問題なくダウンロードされました。
+        </pre>
+
+
+        <!-- ⑧モーダルの入力フォーム -->
+        <div class="box">
+            <h2>(8))モーダルの入力フォーム</h2>
+            <h3>⑧モーダルの入力フォーム</h3>
+            <div id="dialog-form" title="Create new user">
+                <p class="validateTips">All form fields are required.</p>
+               
+                <form>
+                  <fieldset>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+               
+                    <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                    <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                  </fieldset>
+                </form>
+              </div>
+
+            <table id="users" class="ui-widget ui-widget-content">
+                <thead>
+                  <tr class="ui-widget-header ">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>johndoe1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button id="create-user">Create new user</button>
+        </div>
+
+        <pre class="exampleCode">
+        ※html、css、jsで設定
+        var dialog, form,
+ 
+        // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
+        emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+        name = $( "#name" ),
+        email = $( "#email" ),
+        password = $( "#password" ),
+        allFields = $( [] ).add( name ).add( email ).add( password ),
+        tips = $( ".validateTips" );
+    
+      function updateTips( t ) {
+        tips
+          .text( t )
+          .addClass( "ui-state-highlight" );
+        setTimeout(function() {
+          tips.removeClass( "ui-state-highlight", 1500 );
+        }, 500 );
+      }
+    
+      function checkLength( o, n, min, max ) {
+        if ( o.val().length > max || o.val().length < min ) {
+          o.addClass( "ui-state-error" );
+          updateTips( "Length of " + n + " must be between " +
+            min + " and " + max + "." );
+          return false;
+        } else {
+          return true;
+        }
+      }
+    
+      function checkRegexp( o, regexp, n ) {
+        if ( !( regexp.test( o.val() ) ) ) {
+          o.addClass( "ui-state-error" );
+          updateTips( n );
+          return false;
+        } else {
+          return true;
+        }
+      }
+    
+      function addUser() {
+        var valid = true;
+        allFields.removeClass( "ui-state-error" );
+    
+        valid = valid && checkLength( name, "username", 3, 16 );
+        valid = valid && checkLength( email, "email", 6, 80 );
+        valid = valid && checkLength( password, "password", 5, 16 );
+    
+        valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+        valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
+        valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+    
+        if ( valid ) {
+          $( "#users tbody" ).append( "<tr>" +
+            "<td>" + name.val() + "</td>" +
+            "<td>" + email.val() + "</td>" +
+            "<td>" + password.val() + "</td>" +
+          "</tr>" );
+          dialog.dialog( "close" );
+        }
+        return valid;
+      }
+    
+      dialog = $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 400,
+        width: 350,
+        modal: true,
+        buttons: {
+          "Create an account": addUser,
+          Cancel: function() {
+            dialog.dialog( "close" );
+          }
+        },
+        close: function() {
+          form[ 0 ].reset();
+          allFields.removeClass( "ui-state-error" );
+        }
+      });
+    
+      form = dialog.find( "form" ).on( "submit", function( event ) {
+        event.preventDefault();
+        addUser();
+      });
+    
+      $( "#create-user" ).button().on( "click", function() {
+        dialog.dialog( "open" );
+      });
+    
+        </pre>
+
+    
+</body>
+</html>
